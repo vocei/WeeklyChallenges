@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 using Xunit;
 
 namespace ChallengesWithTestsMark8.Tests
@@ -17,11 +18,14 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(5, 6, false)]
         public void AreTwoNumbersTheSame(int number1, int number2, bool expected)
         {
+        
+
             // Arrange
             ChallengesSet01 challenger = new ChallengesSet01();
 
             // Act
             bool actual = challenger.AreTwoNumbersTheSame(number1, number2);
+
 
             // Assert
             Assert.Equal(expected, actual);
@@ -32,7 +36,7 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(100, 75, 25)]
         [InlineData(1, 1, 0)]
         [InlineData(10, 15, -5)]
-        [InlineData(0, 7, -7)]
+        [InlineData(0, 7, -7)]//<--
         [InlineData(0, 0, 0)]
         [InlineData(-5, 5, -10)]
         [InlineData(-10, -7, -3)]
@@ -40,7 +44,7 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(5.5, 1.2, 4.3)]
         [InlineData(0.7, 0.35, 0.35)]
         [InlineData(-2.2, 1.1, -3.3)]
-        public void Subtract(double minuend, double subtrahend, double expectedDifference)
+        public void Subtract(double minuend = 0, double subtrahend = 7, double expectedDifference = -7)
         {
             // Arrange
             ChallengesSet01 challenger = new ChallengesSet01();
@@ -150,6 +154,16 @@ namespace ChallengesWithTestsMark8.Tests
 
             // Assert
             Assert.Equal("HEY!", actual);
+        }
+
+        [Theory]
+        [InlineData(9, 3, 3)]
+        [InlineData(10, 1, 10)]
+        public void Divide(int firstProblem, int secondProblem, int expectedDivision)
+        {
+            ChallengesSet01 challenger = new ChallengesSet01();
+            double actual = challenger.division(firstProblem, secondProblem);
+            Assert.Equal(actual, expectedDivision);
         }
     }
 }

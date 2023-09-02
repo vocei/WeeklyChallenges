@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace ChallengesWithTestsMark8
 {
@@ -18,32 +19,51 @@ namespace ChallengesWithTestsMark8
 
         public double Subtract(double minuend, double subtrahend)
         {
-            throw new NotImplementedException();
+            double difference = minuend - subtrahend;
+            return difference;
         }
 
         public int Add(int number1, int number2)
         {
-            throw new NotImplementedException();
+            return number1 + number2;
         }
 
         public int GetSmallestNumber(int number1, int number2)
         {
-            throw new NotImplementedException();
+            if (number1 < number2) 
+            {
+                return number1;
+            }
+            else
+            {
+                return number2;
+            }
+
         }
 
         public long Multiply(long factor1, long factor2)
         {
-            throw new NotImplementedException();
+            return factor1 * factor2;
         }
 
         public string GetGreeting(string nameOfPerson)
         {
-            throw new NotImplementedException();
+            if (nameOfPerson == "")
+
+            {
+                return "Hello!";
+            }
+            return $"Hello, {nameOfPerson}!";            
         }
 
         public string GetHey()
         {
-            throw new NotImplementedException();
+            return "HEY!";
+        }
+
+        public double division(double oneNumber, double twoNumber)
+        {
+            return oneNumber / twoNumber;
         }
     }
 }
